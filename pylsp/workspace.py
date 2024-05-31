@@ -176,10 +176,10 @@ class Workspace:
     def apply_edit(self, edit):
         return self._endpoint.request(self.M_APPLY_EDIT, {"edit": edit})
 
-    def publish_diagnostics(self, doc_uri, diagnostics):
+    def publish_diagnostics(self, doc_uri, diagnostics, doc_version):
         self._endpoint.notify(
             self.M_PUBLISH_DIAGNOSTICS,
-            params={"uri": doc_uri, "diagnostics": diagnostics},
+            params={"uri": doc_uri, "diagnostics": diagnostics, "version": doc_version},
         )
 
     @contextmanager
