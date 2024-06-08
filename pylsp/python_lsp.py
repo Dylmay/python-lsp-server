@@ -442,7 +442,7 @@ class PythonLSPServer(MethodDispatcher):
         workspace = self._match_uri_to_workspace(doc_uri)
         document_object = workspace.documents.get(doc_uri, None)
         if isinstance(document_object, Document):
-            self._lint_text_document(doc_uri, workspace, is_saved, doc_version)
+            self._lint_text_document(doc_uri, workspace, is_saved, document_object.version)
         elif isinstance(document_object, Notebook):
             self._lint_notebook_document(document_object, workspace)
 
