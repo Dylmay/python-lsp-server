@@ -324,7 +324,7 @@ class Workspace:
                 "value": value,
             },
         )
-    
+
     def log_message(self, message, msg_type=lsp.MessageType.Info):
         self._endpoint.notify(
             self.M_LOG_MESSAGE, params={"type": msg_type, "message": message}
